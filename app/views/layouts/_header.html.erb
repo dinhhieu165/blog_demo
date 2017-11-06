@@ -65,8 +65,13 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
           <h1>Cheer Up</h1>
-          <span class="subheading">Make you always happy</span>
-          <%= link_to "Sign up now!", signup_path , class: "btn btn-lg btn-primary" %>
+          <% if logged_in? %>
+            <span class="subheading">Make you always happy</span>
+          <% else %>
+            <span class="subheading">Make you always happy</span>
+            <%= link_to "Sign up now!", signup_path , class: "btn btn-lg btn-primary" %>
+          <% end %>
+
         </div>
       </div>
     </div>
